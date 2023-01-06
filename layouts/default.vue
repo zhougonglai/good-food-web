@@ -1,6 +1,4 @@
 <template>
   <AppHeader />
-  <main class="container mx-auto">
-    <slot />
-  </main>
+  <slot />
 </template>
