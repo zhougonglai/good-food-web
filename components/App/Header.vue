@@ -39,7 +39,7 @@
             :class="[{
   'bg-green-500 text-white hover:bg-green-600': isExactActive,
   'hover:border-green-500 hover:text-gray-700': !isExactActive
-}]">排行榜</a>
+}]">热门</a>
         </NuxtLink>
         <NuxtLink to="/service" custom v-slot="{ href, isExactActive }">
           <a :href="href"
@@ -57,7 +57,7 @@
     </div>
 
     <div
-      class="bg-white bg-opacity-80 backdrop-blur inline-flex items-center justify-center px-4 rounded-tr-3xl rounded-bl-3xl rounded-tl-xl rounded-br-xl">
+      class="bg-white bg-opacity-80 backdrop-blur shadow inline-flex items-center justify-center px-4 rounded-tr-3xl rounded-bl-3xl rounded-tl-xl rounded-br-xl">
       <button class="w-12 h-12 inline-flex items-center justify-center">
         <MagnifyingGlassIcon class="w-5 h-5 text-green-500 hover:text-green-600" />
       </button>
@@ -65,15 +65,15 @@
         <ShoppingCartIcon class="w-5 h-5 text-green-500 hover:text-green-600" />
       </button>
       <button class="w-12 h-12 inline-flex items-center justify-center">
-        <svg class="w-5 h-5 inline-flex items-center justify-center">
-          <use xlink:href="#icon-sun" />
-        </svg>
-      </button>
-      <button class="w-12 h-12 inline-flex items-center justify-center">
         <UserIcon class="w-5 h-5 text-green-500 hover:text-green-600" />
       </button>
       <button class="w-12 h-12 items-center justify-center sm:inline-flex md:hidden">
         <Bars3Icon class="w-5 h-5 text-gray-500 hover:text-gray-600" />
+      </button>
+      <button class="w-12 h-12 inline-flex items-center justify-center">
+        <svg class="w-5 h-5 inline-flex items-center justify-center">
+          <use xlink:href="#icon-sun" />
+        </svg>
       </button>
     </div>
   </header>
