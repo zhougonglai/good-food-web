@@ -1,5 +1,5 @@
 <template>
-  <main class="pt-40">
+  <main class="pt-24">
     <NuxtPage />
   </main>
 </template>
