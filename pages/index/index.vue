@@ -17,9 +17,8 @@
     </div>
   </section>
 
-  <div class="fixed z-0 top-0 right-0 w-[750px] h-[250px]">
-    <div
-      class="absolute bottom-0 left-[-100px] z-0 bg-red-400 backdrop-blur -skew-x-12 w-[1000px] h-[750px] rounded-3xl shadow-2xl" />
+  <div class="fixed z-0 top-0 right-0 w-1/3 h-[250px]">
+    <div class="absolute bottom-0 left-[-100px] z-0 bg-red-400 backdrop-blur -skew-x-12 w-full h-[250px] scale-x-150" />
   </div>
 </template>
 <script setup>
