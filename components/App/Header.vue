@@ -14,9 +14,9 @@
           <a :href="href"
             class="w-24 border border-transparent text-center leading-loose rounded-tr-2xl rounded-bl-2xl rounded-tl-lg rounded-br-lg"
             :class="{
-  'bg-green-500 text-white hover:bg-green-600': isExactActive,
-  'text-gray-500 hover:border-green-500 hover:text-gray-700': !isExactActive
-}" v-text="nav.label" />
+              'bg-green-500 text-white hover:bg-green-600': isExactActive,
+              'text-gray-500 hover:border-green-500 hover:text-gray-700': !isExactActive
+            }" v-text="nav.label" />
         </NuxtLink>
       </nav>
       <!-- <div class="border border-gray-200 rounded-full hover:border-gray-400 focus-within:border-gray-400">
@@ -26,7 +26,7 @@
     </div>
 
     <div
-      class="bg-white bg-opacity-80 backdrop-blur shadow inline-flex items-center justify-center px-4 rounded-tr-3xl rounded-bl-3xl rounded-tl-xl rounded-br-xl">
+      class="bg-white bg-opacity-80 backdrop-blur shadow inline-flex items-center justify-center px-4 rounded-tl-3xl rounded-tr-xl rounded-bl-xl rounded-br-3xl">
       <button class="w-12 h-12 inline-flex items-center justify-center">
         <MagnifyingGlassIcon class="w-5 h-5 text-green-500 hover:text-green-600" />
       </button>
