@@ -13,7 +13,7 @@
         <NuxtLink v-for="nav in navMenus" :key="nav.to" :to="nav.to" custom v-slot="{ href, isExactActive }">
           <a :href="href" class="w-24 border border-transparent text-center leading-loose rounded-2xl" :class="{
             'bg-green-500 text-white hover:bg-green-600': isExactActive,
-            'text-gray-500 hover:border-green-500 hover:text-gray-700': !isExactActive
+            'text-slate-500 hover:border-green-500 hover:text-slate-700 dark:hover:text-slate-300': !isExactActive
           }" v-text="nav.label" />
         </NuxtLink>
       </nav>
@@ -29,9 +29,9 @@
           <UserIcon class="w-5 h-5 text-green-500 hover:text-green-600" />
         </button>
         <button class="w-12 h-12 items-center justify-center sm:inline-flex md:hidden">
-          <Bars3Icon class="w-5 h-5 text-gray-500 hover:text-gray-600" />
+          <Bars3Icon class="w-5 h-5 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300" />
         </button>
-        <button class="w-12 h-12 inline-flex items-center justify-center">
+        <button class="w-12 h-12 inline-flex items-center justify-center" @click="toggleTheme">
           <svg class="w-5 h-5 inline-flex items-center justify-center">
             <use xlink:href="#icon-sun" />
           </svg>
@@ -42,9 +42,10 @@
 </template>
 <script setup>
 import { Bars3Icon, UserIcon, MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/vue/24/solid/index'
-import { useWindowScroll } from '@vueuse/core'
+import { useLocalStorage } from '@vueuse/core'
 
-const { y } = useWindowScroll()
+const theme = useLocalStorage('theme', 'system')
+const dark = ref()
 
 const navMenus = ref([
   {
@@ -67,5 +68,27 @@ const navMenus = ref([
     children: []
   },
 ])
+
+const toggleTheme = () => {
+  if (theme.value === 'dark') {
+    theme.value = 'light'
+  }
+
+  if (theme.value === 'light') {
+    theme.value = 'dark'
+  }
+
+  theme.value = 'dark'
+}
+
+onMounted(() => {
+  dark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+})
+
+useHead(() => ({
+  bodyAttrs: {
+    class: () => theme.value === 'system' ? dark.value ? 'dark' : '' : ''
+  }
+}))
 
 </script>
