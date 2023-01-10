@@ -1,9 +1,9 @@
 <template>
-  <section class="container mx-auto relative z-10 py-10 rounded-3xl grid grid-cols-[200px,minmax(600px,100%),384px]">
-    <ul class="flex flex-col items-center space-y-4 py-4">
+  <section class="container mx-auto relative z-10 py-10 grid grid-cols-[200px,minmax(600px,100%),384px]">
+    <ul class="flex flex-col items-center space-y-4 py-4 sticky">
       <li v-for="nav, i in navMenus" :key="i">
         <button
-          class="w-32 transition-all text-xl text-white bg-green-500 hover:bg-white hover:text-green-500 hover:border-green-500 border border-transparent text-center leading-loose rounded-xl"
+          class="w-32 transition-all text-xl text-slate-500 backdrop-blur bg-transparent hover:text-slate-700 text-center leading-loose rounded-xl"
           v-text="nav.label" />
       </li>
     </ul>
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col space-y-4">
+    <div class="flex flex-col space-y-4 sticky">
       <div class="bg-white rounded-3xl shadow">
         <h1 class="font-bold  text-green-500 text-2xl font-serif indent-4 p-4">每日推荐</h1>
         <img src="@/assets/img/test.webp" width="450" />
@@ -61,9 +61,9 @@
     </div>
   </section>
 
-  <div class="fixed z-0 top-0 right-0 w-1/3 h-[250px]">
+  <!-- <div class="fixed z-0 top-0 right-0 w-1/3 h-[250px]">
     <div class="absolute top-0 right-[-40px] z-0 bg-red-400 backdrop-blur -skew-x-12 rounded-bl-3xl w-full h-full" />
-  </div>
+  </div> -->
 </template>
 <script setup>
 import img1 from '@/assets/img/img1.jpeg'
