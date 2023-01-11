@@ -1,6 +1,7 @@
 <template>
   <slot name="header" />
   <slot />
+  <KFTheme />
 </template>
 <script setup>
 import logo from '/logo.png'
@@ -28,7 +29,7 @@ useHead({
   ],
   script: [
     {
-      src: '//at.alicdn.com/t/c/font_1562950_wta71uggive.js',
+      src: '//at.alicdn.com/t/c/font_1562950_se1ldd3vtt.js',
       body: true
     }
   ]

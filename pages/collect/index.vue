@@ -1,6 +1,6 @@
 <template>
   <main class="pt-24">
-    <NuxtPage pageKey="index" />
+    collect
   </main>
 </template>
 <script setup>

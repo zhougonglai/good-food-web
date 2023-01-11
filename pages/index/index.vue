@@ -1,6 +1,6 @@
 <template>
   <section class="container mx-auto relative z-10 py-10 grid grid-cols-[200px,minmax(600px,100%),384px]">
-    <ul class="flex flex-col items-center space-y-4 py-4 sticky">
+    <ul class="flex flex-col items-center space-y-4 py-4 sticky top-0">
       <li v-for="nav, i in navMenus" :key="i">
         <button
           class="w-32 transition-all text-xl text-slate-500 dark:text-slate-400 backdrop-blur bg-transparent hover:text-slate-700 dark:hover:text-slate-200 text-center leading-loose rounded-xl"
@@ -9,13 +9,13 @@
     </ul>
 
     <div class="flex flex-col items-center space-y-4">
-      <div class="bg-slate-200 dark:bg-slate-700 ring-1 ring-slate-300 dark:ring-slate-600 rounded-3xl overflow-hidden"
+      <div class="bg-slate-50 dark:bg-slate-700 ring-1 ring-slate-300 dark:ring-slate-600 rounded-3xl overflow-hidden"
         v-for="r, i in recipe" :key="i">
         <div class="relative">
           <img :src="r.cover" width="600" />
           <ul class="absolute bottom-2 right-2 space-x-2 inline-flex">
             <li v-for="t, i in r.tag" :key="i"
-              class="bg-slate-200 dark:bg-slate-700 px-2 py-1 text-green-500 text-sm rounded">
+              class="bg-white dark:bg-slate-900 px-2 py-1 text-slate-700 text-sm rounded">
               <template v-if="typeof (t) === 'string'">
                 {{ t }}
               </template>
@@ -42,8 +42,8 @@
       </div>
     </div>
 
-    <div class="flex flex-col space-y-4 sticky">
-      <div class="bg-slate-200 dark:bg-slate-800 rounded-3xl ring-1 ring-slate-300 dark:ring-slate-600">
+    <div class="flex flex-col space-y-4 sticky top-0">
+      <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl ring-1 ring-slate-300 dark:ring-slate-600">
         <h1 class="font-bold  text-green-500 text-2xl font-serif indent-4 p-4">每日推荐</h1>
         <img src="@/assets/img/test.webp" width="450" />
         <div class="p-4">
@@ -55,7 +55,7 @@
       </div>
 
       <ul
-        class="bg-slate-200 dark:bg-slate-800 rounded-3xl py-2 text-slate-800 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-600">
+        class="bg-slate-50 dark:bg-slate-800 rounded-3xl py-2 text-slate-800 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-600">
         <h2 class="font-bold text-2xl font-serif indent-4 p-4 border-b">热门菜谱</h2>
         <li v-for="h, i in hot" :key="i" class="leading-6 text-md px-4 py-2">
           {{ i+ 1 }}. {{ h.label }}

@@ -31,7 +31,7 @@
         <button class="w-12 h-12 items-center justify-center sm:inline-flex md:hidden">
           <Bars3Icon class="w-5 h-5 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300" />
         </button>
-        <button class="w-12 h-12 inline-flex items-center justify-center" @click="toggleTheme">
+        <button class="w-12 h-12 inline-flex items-center justify-center" @click="openTheme">
           <svg class="w-5 h-5 inline-flex items-center justify-center">
             <use xlink:href="#icon-sun" />
           </svg>
@@ -45,6 +45,7 @@ import { Bars3Icon, UserIcon, MagnifyingGlassIcon, ShoppingCartIcon } from '@her
 import { useLocalStorage } from '@vueuse/core'
 
 const theme = useLocalStorage('theme', 'system')
+const appConfig = useAppConfig()
 const dark = ref()
 
 const navMenus = ref([
@@ -79,6 +80,10 @@ const toggleTheme = () => {
   }
 
   theme.value = 'dark'
+}
+
+const openTheme = () => {
+  appConfig.bus.emit('theme:open')
 }
 
 onMounted(() => {
