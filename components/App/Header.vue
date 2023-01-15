@@ -46,7 +46,6 @@ import { useLocalStorage } from '@vueuse/core'
 
 const theme = useLocalStorage('theme', 'system')
 const appConfig = useAppConfig()
-const dark = ref()
 
 const navMenus = ref([
   {
@@ -85,15 +84,4 @@ const toggleTheme = () => {
 const openTheme = () => {
   appConfig.bus.emit('theme:open')
 }
-
-onMounted(() => {
-  dark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
-})
-
-useHead(() => ({
-  bodyAttrs: {
-    class: () => theme.value === 'system' ? dark.value ? 'dark' : '' : ''
-  }
-}))
-
 </script>

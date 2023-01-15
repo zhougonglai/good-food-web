@@ -15,7 +15,7 @@
           <img :src="r.cover" width="600" />
           <ul class="absolute bottom-2 right-2 space-x-2 inline-flex">
             <li v-for="t, i in r.tag" :key="i"
-              class="bg-white dark:bg-slate-900 px-2 py-1 text-slate-700 text-sm rounded">
+              class="bg-white dark:bg-slate-900 px-2 py-1 text-slate-700 dark:text-slate-100 text-sm rounded">
               <template v-if="typeof (t) === 'string'">
                 {{ t }}
               </template>

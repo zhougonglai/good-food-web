@@ -12,9 +12,6 @@ useHead({
   meta: [
     { name: 'description', content: '吃货' }
   ],
-  bodyAttrs: {
-    class: 'bg-slate-100 min-h-screen'
-  },
   link: [
     {
       rel: "icon",
